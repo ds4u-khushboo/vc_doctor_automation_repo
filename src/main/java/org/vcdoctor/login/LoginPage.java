@@ -34,12 +34,12 @@ public class LoginPage {
             FileInputStream fileInputStream = new FileInputStream("E:\\Khushboo\\vc_doctor_automation\\data.xlsx");
             XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
             Sheet sheet = workbook.getSheetAt(0);
-            int rows = 1;
+            int rowcount = 1;
             for (Row row : sheet) {
                 List<Object> rowData = new ArrayList<>();
                 for (Cell cell : row) {
                     rowData.add(cell.getStringCellValue());
-                    rows++;
+                    rowcount++;
                 }
                 WebElement countryElement = chromeDriver.findElementByXPath("//*[@id=\"select2-CountryCode-container\"]");
                 countryElement.click();
